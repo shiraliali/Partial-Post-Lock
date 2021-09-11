@@ -13,30 +13,33 @@ Version: 1.0.0
 /*
 Css Stylesheet and FontAwsome will loaded here
 */
-function wp_partial_lockpost_css() {
+function ppl_partial_lockpost_css() {
 	
     // Getting Plugin Directory URL
-    $plugin_url = plugin_dir_url( __FILE__ );
+    $ppl_plugin_url = plugin_dir_url( __FILE__ );
 	
     // Loading Plugin style from css folder in plugin directory
-    wp_enqueue_style( 'style', $plugin_url . 'css/style.css' );
+    wp_enqueue_style( 'style', $ppl_plugin_url . 'css/style.css' );
     
     // Loading Font Awsome kit from fontawsome cloud servers	
-    wp_enqueue_script( 'fontawsomeicons', FONTAWESOME );
+    wp_enqueue_script( 'fontawsomeicons', PPL_FONTAWESOME );
 
 }
-add_action( 'wp_enqueue_scripts', 'wp_partial_lockpost_css' );
+add_action( 'wp_enqueue_scripts', 'ppl_partial_lockpost_css' );
 
 
 // Include init.php file
 include( plugin_dir_path( __FILE__ ) . 'define/init.php');
 
 
+
+
+
  // Start Function 
  // This function will Make the shortcode And the Message
  // $content is your post content
  
- function lock_post( $atts, $content = null ) {
+ function ppl_lock_post( $atts, $content = null ) {
 
  if ( is_user_logged_in()) {
 	 
@@ -56,13 +59,13 @@ include( plugin_dir_path( __FILE__ ) . 'define/init.php');
 	<?php
 	 
 // Login Message	 
-echo MSG_Login;
+echo PPL_MSG_Login;
 	 
 // Getting Login Wordpress url and displaying url as Clickable link	 
-echo LOGIN;
+echo PPL_LOGIN;
 
 // Lock Icon using font awsome that will showing in right side Inside Login section Box	 
-echo LOCK_ICON; ?>
+echo PPL_LOCK_ICON; ?>
 
 </div>
 <?php
@@ -71,5 +74,6 @@ echo LOCK_ICON; ?>
  return ob_get_clean();
 
  } 
+
 // Shortcode created, it will be [lockpost] 
-add_shortcode( 'lockpost', 'lock_post' );
+add_shortcode( 'lockpost', 'ppl_lock_post' );

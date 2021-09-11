@@ -8,15 +8,19 @@
 $login_url = wp_login_url( home_url() );
 
 // Font Awesome Initialize
-define('FONTAWESOME', '//kit.fontawesome.com/569c0825a1.js');
+define('PPL_FONTAWESOME', '//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css');
 
-define('LOGIN_URL', $login_url);
+//Wordpress Login Url
+define('PPL_LOGIN_URL', $login_url);
 
-define('MSG_Login', '<b>Please log in to your account for Access to this Part of post</b><br>');
+//Need to login for access message
+define('PPL_MSG_Login', '<b>Please log in to your account for Access to this Part of post</b><br>');
 
-define('LOCK_ICON', '<i id="lock-icon" class="fas fa-lock"></i>');
+//Lock Icon
+define('PPL_LOCK_ICON', '<i id="lock-icon" class="fas fa-lock"></i>');
 
-define('LOGIN','<i class="fas fa-key"></i><a href="' . LOGIN_URL . '"><strong>  Login To My Account</strong></a>');
+//Makeup login clickable url
+define('PPL_LOGIN','<i class="fas fa-key"></i><a href="' . PPL_LOGIN_URL . '"><strong>  Login To My Account</strong></a>');
 
 
 ?>
